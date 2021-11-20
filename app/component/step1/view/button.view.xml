@@ -16,5 +16,12 @@
 		<MessageStrip showIcon="true" text="js에서 동적으로 버튼 elements를 생성해서 id가 buttonPanel인 Panel에 붙여주는 코드이다."/>
 
 
+		<!-- example2 -->
+
+		<Panel id="buttonPanel2" width="auto" headerText ="여러 타입의 버튼 생성하기"></Panel>
+		<Panel id="example2Panel" width="auto"></Panel>
+
+
+
 	</ScrollContainer>
 </mvc:View>
