@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+    <edmx:DataServices>
+        <Schema Namespace="RainService" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+            <EntityContainer Name="EntityContainer">
+                <EntitySet Name="Books" EntityType="RainService.Books">
+                    <NavigationPropertyBinding Path="author" Target="Authors"/>
+                    <NavigationPropertyBinding Path="texts" Target="Books_texts"/>
+                    <NavigationPropertyBinding Path="localized" Target="Books_texts"/>
+                </EntitySet>
+                <EntitySet Name="Authors" EntityType="RainService.Authors">
+                    <NavigationPropertyBinding Path="books" Target="Books"/>
+                </EntitySet>
+                <EntitySet Name="Books_texts" EntityType="RainService.Books_texts"/>
+            </EntityContainer>
+            <EntityType Name="Books">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.String" Nullable="false"/>
+                <Property Name="title" Type="Edm.String"/>
+                <NavigationProperty Name="author" Type="RainService.Authors" Partner="books">
+                    <ReferentialConstraint Property="author_ID" ReferencedProperty="ID"/>
+                </NavigationProperty>
+                <Property Name="author_ID" Type="Edm.String"/>
+                <Property Name="stock" Type="Edm.String"/>
+                <Property Name="ploat" Type="Edm.String" MaxLength="1000"/>
+                <NavigationProperty Name="texts" Type="Collection(RainService.Books_texts)">
+                    <OnDelete Action="Cascade"/>
+                </NavigationProperty>
+                <NavigationProperty Name="localized" Type="RainService.Books_texts">
+                    <ReferentialConstraint Property="ID" ReferencedProperty="ID"/>
+                </NavigationProperty>
+            </EntityType>
+            <EntityType Name="Authors">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.String" Nullable="false"/>
+                <Property Name="name" Type="Edm.String"/>
+                <NavigationProperty Name="books" Type="Collection(RainService.Books)" Partner="author"/>
+            </EntityType>
+            <EntityType Name="Books_texts">
+                <Key>
+                    <PropertyRef Name="locale"/>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="locale" Type="Edm.String" MaxLength="14" Nullable="false"/>
+                <Property Name="ID" Type="Edm.String" Nullable="false"/>
+                <Property Name="title" Type="Edm.String"/>
+            </EntityType>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

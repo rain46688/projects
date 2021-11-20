@@ -1,0 +1,27 @@
+<mvc:View
+    controllerName="rain.com.step1.controller.App"
+    xmlns:mvc="sap.ui.core.mvc" 
+    xmlns="sap.m" 
+    xmlns:f="sap.f" 
+    xmlns:form="sap.ui.layout.form" 
+    xmlns:core="sap.ui.core" 
+    xmlns:l="sap.ui.layout"
+    xmlns:viz="sap.viz.ui5.controls"
+    xmlns:viz.data="sap.viz.ui5.data"
+    xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds"
+    xmlns:grid="sap.ui.layout.cssgrid"
+    xmlns:mic="sap.suite.ui.microchart"
+    xmlns:card="sap.f.cards"
+    height="100%">
+        <App >
+            <f:FlexibleColumnLayout autoFocus="false" restoreFocusOnBackNavigation="true"
+                                    backgroundDesign="Translucent" id="app" layout="{rain>/layout}"/>
+        </App>
+
+</mvc:View>
+
+
+
+
+
+

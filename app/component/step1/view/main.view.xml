@@ -1,0 +1,16 @@
+<mvc:View
+    controllerName="rain.com.step1.controller.main"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+>
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page id="page" title="스탭1 메인">
+					<content />
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>

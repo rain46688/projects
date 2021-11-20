@@ -1,0 +1,24 @@
+<mvc:View
+    controllerName="rain.controller.RainMainView"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+>
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page id="page" title="매인 페이지">
+					<content>
+
+						 <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop" press=".onroutepage('step1')">
+							<TileContent>
+								<NewsContent contentText="스탭1"/>
+							</TileContent>
+						</GenericTile>
+
+					</content>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>

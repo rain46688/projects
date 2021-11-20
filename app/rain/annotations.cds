@@ -1,0 +1,1 @@
+using RainService as service from '../../srv/cms-service';
