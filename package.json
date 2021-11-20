@@ -11,7 +11,9 @@
   },
   "devDependencies": {
     "sqlite3": "^5.0.2",
-    "tar": ">=4.4.18"
+    "tar": ">=4.4.18",
+    "@sap-cloud-sdk/core": ">=1.52.0",
+    "json-schema": ">=0.4.0"
   },
   "scripts": {
     "start": "cds run",
