@@ -106,6 +106,12 @@
           "name": "main",
           "target": "main",
           "layout": "OneColumn"
+        },
+        {
+          "pattern": "button",
+          "name": "button",
+          "target": "button",
+          "layout": "OneColumn"
         }
 
 
@@ -116,6 +122,11 @@
         "main": {
           "viewId": "main",
           "viewName": "main",
+          "controlAggregation": "beginColumnPages"
+        },
+        "button": {
+          "viewId": "button",
+          "viewName": "button",
           "controlAggregation": "beginColumnPages"
         }
         

@@ -1,0 +1,20 @@
+<mvc:View controllerName="rain.com.step1.controller.button"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m"
+	xmlns:ce="sap.ui.codeeditor"
+	xmlns:core="sap.ui.core">
+	<ScrollContainer
+		height="100%"
+		width="100%"
+		vertical="true"
+		focusable="true">
+
+		<!-- example1 -->
+
+		<Panel id="buttonPanel" width="auto" headerText ="버튼 생성하기"></Panel>
+		<ce:CodeEditor id="example1" height="10rem" type="javascript" />
+		<MessageStrip showIcon="true" text="js에서 동적으로 버튼 elements를 생성해서 id가 buttonPanel인 Panel에 붙여주는 코드이다."/>
+
+
+	</ScrollContainer>
+</mvc:View>

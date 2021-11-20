@@ -24,9 +24,6 @@ sap.ui.define([
          _onRouteMatched: function (oEvent) {
             
         },
-        onPressApprove: function () {
 
-            this.getOwnerComponent().getRouter().navTo("Approve");  
-        }
     })
 })

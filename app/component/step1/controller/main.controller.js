@@ -10,6 +10,11 @@ sap.ui.define([
 		return Controller.extend("rain.com.step1.controller.main", {
 			onInit: function () {
 
-			}
+			},
+
+			onroutepage: function(oEvent){
+				this.getOwnerComponent().getRouter().navTo(oEvent);
+			},
+			
 		});
 	});

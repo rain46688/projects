@@ -12,14 +12,20 @@
     xmlns:grid="sap.ui.layout.cssgrid"
     xmlns:mic="sap.suite.ui.microchart"
     xmlns:card="sap.f.cards"
+    xmlns:tnt="sap.tnt"
     height="100%">
-        <App >
+  <tnt:ToolPage id="toolPage">
+
+    <tnt:mainContents>
+        <App>
             <f:FlexibleColumnLayout autoFocus="false" restoreFocusOnBackNavigation="true"
                                     backgroundDesign="Translucent" id="app" layout="{rain>/layout}"/>
         </App>
+    </tnt:mainContents>
 
+    </tnt:ToolPage>
 </mvc:View>
-
+    
 
 
 
