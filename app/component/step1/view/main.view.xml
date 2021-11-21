@@ -17,6 +17,12 @@
 								<NewsContent contentText="버튼"/>
 							</TileContent>
 						</GenericTile>
+
+						<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop" press=".onroutepage('first')">
+							<TileContent>
+								<NewsContent contentText="3컬럼 레이아웃"/>
+							</TileContent>
+						</GenericTile>
 			</content>
 		</Panel>
 

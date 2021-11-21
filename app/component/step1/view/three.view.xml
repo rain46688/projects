@@ -1,0 +1,106 @@
+<mvc:View controllerName="rain.com.step1.controller.three"
+  xmlns:mvc="sap.ui.core.mvc" 
+    xmlns="sap.m" 
+    xmlns:f="sap.f" 
+    xmlns:form="sap.ui.layout.form" 
+    xmlns:l="sap.ui.layout" 
+    xmlns:core="sap.ui.core" 
+    xmlns:grid="sap.ui.layout.cssgrid"
+    xmlns:card="sap.f.cards"
+    xmlns:smartFilterBar="sap.ui.comp.smartfilterbar"
+    xmlns:smartTable="sap.ui.comp.smarttable"
+    xmlns:u="sap.uxap"
+    height="100%">
+
+ <u:ObjectPageLayout id="ObjectPageLayout" 
+ showTitleInHeaderContent="true" 
+ alwaysShowContentHeader="true" 
+ preserveHeaderStateOnScroll="false"
+headerContentPinnable="true" 
+isChildPage="true" 
+upperCaseAnchorBar="false"
+showFooter="true">
+        
+        <u:headerTitle>
+            <u:ObjectPageDynamicHeaderTitle>
+                <u:expandedHeading>
+                    <Title text="Three" wrapping="true"/>
+                </u:expandedHeading>
+                <u:snappedHeading>
+                    <Title text="Three" wrapping="true"/>
+                </u:snappedHeading>
+                <u:navigationActions>
+                    <OverflowToolbarButton id="fullScreen" class="BoardDetailOtb" type="Transparent" icon="sap-icon://full-screen" press="onFull" tooltip="스크린 확장" visible="false"/>
+                    <OverflowToolbarButton id="exitScreen" type="Transparent" icon="sap-icon://exit-full-screen" press="onExitFull" tooltip="스크린 축소" />
+                    <OverflowToolbarButton type="Transparent" icon="sap-icon://decline" press="onback" tooltip="돌아가기" />
+                </u:navigationActions>
+            </u:ObjectPageDynamicHeaderTitle>
+        </u:headerTitle>
+
+        <u:sections>
+
+   <u:ObjectPageSection titleUppercase="false" showTitle="false">
+                <u:subSections>
+
+<u:ObjectPageSubSection titleUppercase="false" showTitle="false">
+                 <Table
+                sticky="HeaderToolbar,ColumnHeaders"
+                id="testTable"
+                width="auto"
+                growing="true"
+                growingThreshold="10"
+                items="{
+                    path: 'list>/'
+                }"
+                >
+                <headerToolbar>
+                    <OverflowToolbar>
+                        <ToolbarSpacer/>
+                    </OverflowToolbar>
+                </headerToolbar>
+
+                <columns>
+                    <Column hAlign="Center">
+                        <Text text="컬럼1"/>
+                    </Column>
+                    <Column minScreenWidth="Desktop" hAlign="Center">
+                        <Text text="컬럼2"/>
+                    </Column>
+                    <Column minScreenWidth="Desktop" hAlign="Center">
+                        <Text text="컬럼3"/>
+                    </Column>
+                    <Column hAlign="Center">
+                        <Text text="컬럼4"/>
+                    </Column>
+                </columns>
+
+                <items>
+                    <ColumnListItem type="Navigation" press=".onroutepage">
+                        <cells>
+                            <Text text="{list>1}" />
+                            <Text text="{list>2}" />
+                            <Text text="{list>3}" />
+                            <Text text="{list>4}" />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+             </u:ObjectPageSubSection>
+
+
+             </u:subSections>
+            </u:ObjectPageSection>
+
+        </u:sections>
+
+  
+        <u:footer>
+			<OverflowToolbar>
+                <ToolbarSpacer/>
+				<Button type="Emphasized" text="수정" press=".onModify"  />
+                <Button type="Default" text="삭제" press=".onDelete"  />
+			</OverflowToolbar>
+		</u:footer>
+
+    </u:ObjectPageLayout>
+</mvc:View>

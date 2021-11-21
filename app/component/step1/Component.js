@@ -15,7 +15,6 @@ sap.ui.define(
                     editmode : 0,
                     newmode :0
                 });
-         this.setModel(oViewModel, "rain");
 
          UIComponent.prototype.init.apply(this, arguments);
 

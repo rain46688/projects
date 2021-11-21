@@ -1,16 +1,22 @@
 {
-  "_version": "1.32.0",
+  "_version": "1.21.0",
   "sap.app": {
     "id": "rain.com.step1",
     "type": "application",
-    "i18n": "i18n/i18n.properties",
-    "applicationVersion": {
-      "version": "1.0.0"
+    "i18n": {
+      "bundleUrl": "i18n/i18n.properties",
+      "supportedLocales": [
+        ""
+      ],
+      "fallbackLocale": ""
     },
     "title": "{{appTitle}}",
     "description": "{{appDescription}}",
     "resources": "resources.json",
-    "ach": "ach",
+    "applicationVersion": {
+      "version": "1.0.0"
+    },
+    "ach": "set-ach",
     "dataSources": {
       "mainService": {
         "uri": "/rain/step1/",
@@ -18,14 +24,24 @@
         "settings": {
           "odataVersion": "4.0"
         }
+      },
+      "commonService": {
+        "uri": "/rain/common/",
+        "type": "OData",
+        "settings": {
+          "odataVersion": "4.0"
+        }
       }
     }
+  },
+  "sap.fiori": {
+    "registrationIds": [],
+    "archeType": "transactional"
   },
   "sap.ui": {
     "technology": "UI5",
     "icons": {
-      "icon": "sap-icon://task",
-      "favIcon": "",
+      "icon": "",
       "phone": "",
       "phone@2": "",
       "tablet": "",
@@ -37,9 +53,11 @@
       "phone": true
     }
   },
-
   "sap.ui5": {
-    "flexEnabled": false,
+    "contentDensities": {
+      "cozy": true,
+      "compact": true
+    },
     "rootView": {
       "viewName": "rain.com.step1.view.App",
       "type": "XML",
@@ -47,23 +65,24 @@
       "id": "app"
     },
     "dependencies": {
-			"minUI5Version": "1.96.0",
+      "minUI5Version": "1.75.0",
       "libs": {
-        "sap.ui.core": {},
         "sap.m": {},
-        "sap.ui.layout": {},
-        "sap.f": {}
+        "sap.f": {},
+        "sap.tnt": {},
+        "sap.ui.core": {}
       }
     },
-    "contentDensities": {
-      "compact": true,
-      "cozy": true
-    },
+    "handleValidation": true,
     "models": {
       "i18n": {
         "type": "sap.ui.model.resource.ResourceModel",
         "settings": {
-          "bundleName": "rain.com.step1.i18n.i18n"
+          "bundleName": "rain.com.step1.i18n.i18n",
+          "supportedLocales": [
+            ""
+          ],
+          "fallbackLocale": ""
         }
       },
       "": {
@@ -71,7 +90,17 @@
         "preload": true,
         "settings": {
           "operationMode": "Server",
-					"groupId": "$auto",
+          "groupId": "$auto",
+          "synchronizationMode": "None",
+          "autoExpandSelect": true
+        }
+      },
+      "common": {
+        "dataSource": "commonService",
+        "preload": true,
+        "settings": {
+          "operationMode": "Server",
+          "groupId": "$auto",
           "synchronizationMode": "None",
           "autoExpandSelect": true
         }
@@ -80,27 +109,28 @@
     "resources": {
       "css": [
         {
-          "uri": "css/style.css"
+          "uri": "./css/style.css",
+          "id": ""
         }
       ]
     },
-    "config": {
-			"fullWidth": true
-		},
+
+
+
+
     "routing": {
       "config": {
-        "routerClass": "sap.m.routing.Router",
+        "routerClass": "sap.f.routing.Router",
         "viewType": "XML",
         "path": "rain.com.step1.view",
-        "transition": "slide",
         "controlId": "app",
-        "controlAggregation": "pages",
-        "clearControlAggregation": false,
+        "transition": "slide",
+        "bypassed": {
+          "target": "notFound"
+        },
         "async": true
       },
       "routes": [
-
-
         {
           "pattern": "",
           "name": "main",
@@ -112,13 +142,53 @@
           "name": "button",
           "target": "button",
           "layout": "OneColumn"
+        },
+        {
+          "pattern": "first",
+          "name": "first",
+          "target": "first",
+          "layout": "OneColumn"
+        },
+        {
+          "pattern": "two/{param}",
+          "name": "two",
+          "target": [
+              "first",
+              "two"
+          ],
+          "layout": "TwoColumnsMidExpanded"
+        },{
+          "pattern": "twoFull/{param}",
+          "name": "twoFull",
+          "target": [
+              "first",
+              "two"
+          ],
+          "layout": "MidColumnFullScreen"
+        },{
+          "pattern": "three/{param}/{param2}",
+          "name": "three",
+          "target": [
+              "first",
+              "two",
+              "three"
+          ],
+          "layout": "ThreeColumnsEndExpanded"
+        },{
+          "pattern": "threeFull/{param}/{param2}",
+          "name": "threeFull",
+          "target": [
+              "first",
+              "two",
+              "three"
+          ],
+          "layout": "EndColumnFullScreen"
         }
+
 
 
       ],
       "targets": {
-
-
         "main": {
           "viewId": "main",
           "viewName": "main",
@@ -128,8 +198,24 @@
           "viewId": "button",
           "viewName": "button",
           "controlAggregation": "beginColumnPages"
+        },
+        "first": {
+          "viewId": "first",
+          "viewName": "first",
+          "controlAggregation": "beginColumnPages"
+        },
+        "two": {
+          "viewId": "two",
+          "viewName": "two",
+          "controlAggregation": "midColumnPages"
+        },
+        "three": {
+          "viewId": "three",
+          "viewName": "three",
+          "controlAggregation": "endColumnPages"
         }
-        
+
+
 
 
       }

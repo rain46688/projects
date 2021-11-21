@@ -19,7 +19,7 @@
     <tnt:mainContents>
         <App>
             <f:FlexibleColumnLayout autoFocus="false" restoreFocusOnBackNavigation="true"
-                                    backgroundDesign="Translucent" id="app" layout="{rain>/layout}"/>
+                                    backgroundDesign="Translucent" id="app"/>
         </App>
     </tnt:mainContents>
 

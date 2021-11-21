@@ -1,0 +1,78 @@
+<mvc:View controllerName="rain.com.step1.controller.first"
+  xmlns:mvc="sap.ui.core.mvc" 
+    xmlns="sap.m" 
+    xmlns:f="sap.f" 
+    xmlns:form="sap.ui.layout.form" 
+    xmlns:layout="sap.ui.layout" 
+    xmlns:core="sap.ui.core" 
+    xmlns:grid="sap.ui.layout.cssgrid"
+    xmlns:card="sap.f.cards"
+    xmlns:smartFilterBar="sap.ui.comp.smartfilterbar"
+    xmlns:smartTable="sap.ui.comp.smarttable"
+    height="100%">
+
+     <f:DynamicPage id="testPage"
+        headerExpanded="true"
+        preserveHeaderStateOnScroll="true"
+        toggleHeaderOnTitleClick="true">
+        
+        <f:title>
+            <f:DynamicPageTitle>
+                <f:heading>
+                    <HBox alignItems="Center">
+                        <OverflowToolbarButton id="pageNavBackButton" type="Transparent" icon="sap-icon://nav-back" press=".onback"  />
+                        <core:Icon src="sap-icon://sys-monitor" size="2rem"/>
+                        <Title text="3컬럼 레이아웃" class="sapUiTinyMarginBegin"/>
+                    </HBox>
+                </f:heading>
+            </f:DynamicPageTitle>
+        </f:title>
+        <f:header>
+        </f:header>
+        <!-- 테이블 정보 -->
+        <f:content>
+            <Table
+                sticky="HeaderToolbar,ColumnHeaders"
+                id="testTable"
+                width="auto"
+                growing="true"
+                growingThreshold="10"
+                items="{
+                    path: 'list>/'
+                }"
+                >
+                <headerToolbar>
+                    <OverflowToolbar>
+                        <ToolbarSpacer/>
+                    </OverflowToolbar>
+                </headerToolbar>
+
+                <columns>
+                    <Column hAlign="Center">
+                        <Text text="컬럼1"/>
+                    </Column>
+                    <Column minScreenWidth="Desktop" hAlign="Center">
+                        <Text text="컬럼2"/>
+                    </Column>
+                    <Column minScreenWidth="Desktop" hAlign="Center">
+                        <Text text="컬럼3"/>
+                    </Column>
+                    <Column hAlign="Center">
+                        <Text text="컬럼4"/>
+                    </Column>
+                </columns>
+
+                <items>
+                    <ColumnListItem type="Navigation" press=".onroutepage">
+                        <cells>
+                            <Text text="{list>1}" />
+                            <Text text="{list>2}" />
+                            <Text text="{list>3}" />
+                            <Text text="{list>4}" />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </f:content>
+    </f:DynamicPage>
+</mvc:View>
