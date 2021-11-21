@@ -52,7 +52,7 @@ sap.ui.define([
 				), "list");
 			},
 
-			// 상세 페이지 라우팅
+			// three 페이지 라우팅
 			onroutepage: function(oEvent){
 				_this.getOwnerComponent().getRouter().navTo("three", {param : _param, param2 : oEvent.getSource().getCells()[0].getText()});
 			},

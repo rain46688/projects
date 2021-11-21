@@ -31,7 +31,13 @@ sap.ui.define([
 			
 			},
 
-			// 상세 페이지 라우팅
+			// 뒤로가기 버튼 클릭
+			onback: function () {
+				_this.getOwnerComponent().getRouter().navTo("main");
+				},
+		
+
+			// two 페이지로 라우팅
 			onroutepage: function(oEvent){
 				_this.getOwnerComponent().getRouter().navTo("two", {param : oEvent.getSource().getCells()[0].getText()});
 			},
