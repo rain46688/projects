@@ -9,10 +9,12 @@ sap.ui.define([
 
 		return Controller.extend("rain.controller.RainMainView", {
 			onInit: function () {
+				console.log("홈 화면");
 				
 			},
 
 			onroutepage: function(oEvent){
+				console.log("onroutepage");
 				this.getOwnerComponent().getRouter().navTo(oEvent);
 			},
 

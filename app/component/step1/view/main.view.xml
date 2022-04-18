@@ -2,16 +2,28 @@
     controllerName="rain.com.step1.controller.main"
 	xmlns:mvc="sap.ui.core.mvc"
 	xmlns="sap.m"
+	xmlns:f="sap.f"
+	xmlns:layout="sap.ui.layout" 
 	xmlns:core="sap.ui.core">
-	<ScrollContainer
-		height="100%"
-		width="100%"
-		vertical="true"
-		focusable="true">
 
-		<Panel width="auto" class="sapUiResponsiveMargin" accessibleRole="Region">
-			<content>
+     <f:DynamicPage
+        headerExpanded="true"
+        preserveHeaderStateOnScroll="true"
+        toggleHeaderOnTitleClick="true"
+        showFooter="false">
+        
+        <f:title>
+            <f:DynamicPageTitle>
+                <f:heading>
+                    <HBox alignItems="Center">
+                        <Title text="메인 페이지" class="sapUiTinyMarginBegin"/>
+                    </HBox>
+                </f:heading>
+            </f:DynamicPageTitle>
+        </f:title>
 
+        <f:content>
+				<HBox>
 					<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop" press=".onroutepage('button')">
 							<TileContent>
 								<NewsContent contentText="버튼"/>
@@ -23,8 +35,8 @@
 								<NewsContent contentText="3컬럼 레이아웃"/>
 							</TileContent>
 						</GenericTile>
-			</content>
-		</Panel>
-
-	</ScrollContainer>
+						
+				</HBox>
+		</f:content>
+	</f:DynamicPage>
 </mvc:View>

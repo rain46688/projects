@@ -2,12 +2,28 @@
 	xmlns:mvc="sap.ui.core.mvc"
 	xmlns="sap.m"
 	xmlns:ce="sap.ui.codeeditor"
+	xmlns:f="sap.f"
+	xmlns:layout="sap.ui.layout" 
 	xmlns:core="sap.ui.core">
-	<ScrollContainer
-		height="100%"
-		width="100%"
-		vertical="true"
-		focusable="true">
+
+    <f:DynamicPage
+        headerExpanded="true"
+        preserveHeaderStateOnScroll="true"
+        toggleHeaderOnTitleClick="true"
+        showFooter="false">
+        
+        <f:title>
+            <f:DynamicPageTitle>
+                <f:heading>
+                    <HBox alignItems="Center">
+                        <OverflowToolbarButton id="pageNavBackButton" type="Transparent" icon="sap-icon://nav-back" press=".onroutepage('main')"  />
+                        <Title text="버튼" class="sapUiTinyMarginBegin"/>
+                    </HBox>
+                </f:heading>
+            </f:DynamicPageTitle>
+        </f:title>
+		<f:content>
+		<VBox>
 
 		<!-- example1 -->
 
@@ -21,7 +37,7 @@
 		<Panel id="buttonPanel2" width="auto" headerText ="여러 타입의 버튼 생성하기"></Panel>
 		<Panel id="example2Panel" width="auto"></Panel>
 
-
-
-	</ScrollContainer>
+	</VBox>
+	</f:content>
+	</f:DynamicPage>
 </mvc:View>

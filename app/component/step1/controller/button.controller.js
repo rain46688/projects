@@ -17,6 +17,11 @@ sap.ui.define([
 
 			},
 
+			onroutepage: function(oEvent){
+				console.log("onroutepage");
+				this.getOwnerComponent().getRouter().navTo(oEvent);
+			},
+
 			// 페이지 갱신될때 실행되는 함수
 			onMyRoutePatternMatched: async function(oEvent) {
 				_this = this;

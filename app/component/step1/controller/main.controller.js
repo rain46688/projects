@@ -13,8 +13,14 @@ sap.ui.define([
 			},
 
 			onroutepage: function(oEvent){
+				console.log("onroutepage");
 				this.getOwnerComponent().getRouter().navTo(oEvent);
 			},
 			
+			onBack : function(){
+				console.log("onBack");
+				window.history.go(-1);
+			}
+
 		});
 	});
